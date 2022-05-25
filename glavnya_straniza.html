@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slime</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+<head>
+  <link rel="shortcut icon" href="https://img.freepik.com/free-vector/slime-hand-lettering-text_104571-566.jpg" type="image/png">
+ </head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>SLIME</span>
+    </div>
+    <div id="about">
+      <a href="#" title="О нас" onclick="slowScroll('#main')">О нас</a>
+      <a href="#" onclick="slowScroll('#overview')" title="Каталог">Каталог</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Обратная связь</a>
+      <a href="#" onclick="slowScroll('#faq')" title="Ответы на вопросы">Контакты</a>
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>Добро пожаловать!</h1>
+    <h3>Slime-магазин детской одежды</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>Немного информации о нас!</h2>
+      
+      <span>Основаны в 2014 году</span>
+      
+    </div>
+    <div class="text">
+      <span>Slime — магазин авторской детской одежды ручной работы.
+
+        Мы создаем качественную и яркую одежду. Ведь у ребенка с самого юного возраста зарождается чувство стиля. Мы стараемся чтобы каждый ребенок почувствовал себя как взрослый! Это несомненно формирует характер и влияет на настроение Ваших детей.  Все наши вещи сделаны из высококачественного трикотажного полотна, а печать производится с помощью текстильного принтера экологичными, гипоаллергенными красителями, которые не вымываются из ткани со временем. Прикоснитесь к прекрасному вместе с нами!</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>Каталог товаров</h2>
+    <h4></h4>
+
+    <div class="img">
+      <a href="catalog/vverx.html"><img src="https://cdn.laredoute.ru/products/8/6/b/86be5d06260cd0e9340b3caaa30099ec.jpg?imgopt=twic&twic=v1/cover=700x700" alt="#"></a>
+      <span> Верхняя одежда</span>
+      
+    </div>
+    <div class="img">
+      
+      <a href="catalog/shtani.html"><img src="https://cdn.laredoute.ru/products/7/b/1/7b11927690a8e95c38aaca36a5b05bf0.jpg?imgopt=twic&twic=v1/cover=700x700" alt="#"></a>
+      <span>Штаны</span>
+    </div>
+    <div class="img">
+      <a href="catalog/obyv.html"><img src="https://cdn.laredoute.ru/products/6/8/8/688008f2a4ba282b9ad27bd2ba056e0f.jpg?imgopt=twic&twic=v1/cover=700x700" alt="#"></a>
+      <span>Обувь</span>
+    </div>
+    <div class="img">
+      <a href="catalog/akks.html"><img src="https://cdn.laredoute.ru/products/4/b/e/4be5b81db9d8400654b01cee8521121d.jpg?imgopt=twic&twic=v1/cover=700x700" alt="#"></a>
+      <span>Акссесуары</span>
+    </div>
+  </div>
+
+  <div id="contacts">
+    <center><h5>Обратная свзяь</h5></center>
+    <form id="form_input">
+      <label for="name">Имя <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Ваша почта <span>*</span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">Сообщение <span>*</span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+    </form>
+  </div>
+
+  <div id="faq">
+    <div>
+      <span class="title">Оплата</span><br>
+      <span class="heading">Как будет проходит оплата?</span>
+      <p>Оплата товара происходит при его получении</p>
+    </div>
+    <div>
+      <span class="title">Контакты</span><br>
+      <span class="heading">Как можно с нами связаться?</span>
+      <p>Центральный офис
+        Г.Ижевск ул.Пушкинская 132</p>
+      <p> Контактный номер   +7912999129</p>
+      <p> E-mail:slime@gmail.com</p>
+    </div>
+    <div>
+      <span class="title">Доставка</span><br>
+      <span class="heading">Доставка</span>
+      <p>Доставка по г. Ижевск:
+        При заказе свыше 2000 рублей - БЕСПЛАТНО. 
+        При заказе менее 2000 рублей - определяется транспортной компанией. 
+        
+        Доставка по России:
+        При заказе свыше 5000 рублей - БЕСПЛАТНО. 
+        Если заказе менее 5000 рублей - определяется транспортной компанией.</p>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>
